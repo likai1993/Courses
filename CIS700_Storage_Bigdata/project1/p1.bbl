@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}
+
+\bibitem{leveldb}
+{\sc Google}.
+\newblock Leveldb.
+\newblock \url{https://github.com/google/leveldb}.
+
+\end{thebibliography}

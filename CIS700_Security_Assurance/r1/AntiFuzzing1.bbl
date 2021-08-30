@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{reading1}
+Jinho Jung, Hong Hu, David Solodukhin, Daniel Pagan, Kyu~Hyung Lee, and Taesoo
+  Kim.
+\newblock Fuzzification: Anti-fuzzing techniques.
+\newblock In {\em Proceedings of the 28th USENIX Conference on Security
+  Symposium}, SEC'19, page 1913–1930, USA, 2019. USENIX Association.
+
+\end{thebibliography}

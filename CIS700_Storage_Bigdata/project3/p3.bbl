@@ -1,0 +1,24 @@
+\begin{thebibliography}{1}
+
+\bibitem{wiki:aimd}
+{\sc {Additive increase/multiplicative decrease}}.
+\newblock Additive increase/multiplicative decrease --- {W}ikipedia{,} the free
+  encyclopedia, 2020.
+\newblock [Online; accessed 04-December-2020].
+
+\bibitem{tcp:congestion:control}
+{\sc {CS268, Berkeley}}.
+\newblock Lecture 4: Tcp congestion control.
+\newblock [Online; accessed 04-December-2020].
+
+\bibitem{rocksdb}
+{\sc Facebook}.
+\newblock Rocksdb.
+\newblock \url{https://github.com/facebook/rocksdb}.
+
+\bibitem{leveldb}
+{\sc Google}.
+\newblock Leveldb.
+\newblock \url{https://github.com/google/leveldb}.
+
+\end{thebibliography}

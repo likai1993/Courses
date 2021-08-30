@@ -1,0 +1,56 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+%\usepackage{amsmath}  % improve math presentation
+%\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+%\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+\usepackage{blindtext}
+%++++++++++++++++++++++++++++++++++++++++
+
+\begin{document}
+
+\begin{center}
+{\Large FuzziFication: Anti-Fuzzing Techniques} 
+
+{Jinho Jung, Hong Hu, David Solodukhin, Daniel Pagan, Kyu Hyung Lee, and Taesoo Kim}
+\bigskip
+
+{\large Writer: Kai Li}
+\date{\today}
+\end{center}
+
+
+\section{Summary}
+This paper proposed an anti-fuzzing system \textbf{Fuzzification}~\cite{reading1} which contains three anti-fuzzing techniques that can slow down the state-of-art fuzzers and reduce the coverage by the fuzzers. Developers can use these techniques to protect their programs when exposing it to the public where attackers are equipped with state-of-art fuzzers. Slow down the attackers can benefit the developers as they can find bugs more quickly. 
+
+The three techniques are so-called \textbf{SpeedBump}, \textbf{BranchTrap}, and \textbf{AntiHybrid}. 
+\begin{itemize}
+\item SpeedBump works by adding configurable overhead to those cold paths using CSmith by generating delayed blocks that have control-flow dependency and data-flow dependency to the original code blocks, thus it is difficult to be detected by the fuzzers.    
+\item BranchTrap works by chaining various small code snippets and reusing the return-oriented programming intuition. This technique can generate branches that sensitive to the input, thus fool the fuzzers to go the wrong directions which would cover those faked code paths.
+\item AntiHybrid works by introducing implicit data-flow dependencies and injecting multiple code chunks to intentionally trigger path explosions. This technique can hinder fuzzers equipped with symbolic-execution (or dynamic taint analysis). 
+\end{itemize}
+
+Evaluation results show that compared with existing fuzzing techniques, \textbf{Fuzzification} can reduce the coverage by 76\% (to AFL) and 67\% (to HonggFuzz) on average, reduce the discovered crashed by 88\% (to AFL), 98\% (to HonggFuzz), 94\% (to QSym), while incurs negligible overhead (5.4\% in code size and 0.73\% in run time) to the normal users.     
+
+\section{Strengths and Weaknesses}
+\subsection {Strengths}
+1. The proposed system light a new research direction on anti-fuzzing, which can be further explored.\\
+2. Three novel techniques are proposed to anti-fuzzing, e.g., slow down fuzzing execution, hide path coverage and hinder dynamic taint-analysis and symbolic execution.\\
+3. Strong evaluation result supports the authors' claim that the techniques work effectively to slow down the exising fuzzers and reduce the coverage, which introduces small overhead to the normal users. 
+
+\subsection {Weakness}
+1. A major limitation of this work is the defensive methods, if the attacker is knowledgable with these anti-fuzzing techniques, they can easily bypass the protections, and these anti-fuzzing techniques need to be improved continuously along the back-and-forth attack and defense progress.\\ 
+2. These techniques standalone cannot effectively eliminate coverage by the existing fuzzers, especially for fuzzers running with powerful computing resources, these anti-fuzzing techniques need to be combined with other mitigations.\\ 
+3. The evaluation result on small programs (LAVA-M programs) shows \textbf{Fuzzification} brings significant overhead and not effective to small programs.
+
+\bibliographystyle{plain}
+\bibliography{readings}  
+\end{document}

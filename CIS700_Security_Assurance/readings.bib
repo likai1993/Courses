@@ -1,0 +1,60 @@
+@inproceedings{reading1,
+author = {Jung, Jinho and Hu, Hong and Solodukhin, David and Pagan, Daniel and Lee, Kyu Hyung and Kim, Taesoo},
+title = {FUZZIFICATION: Anti-Fuzzing Techniques},
+year = {2019},
+isbn = {9781939133069},
+publisher = {USENIX Association},
+address = {USA},
+abstract = {Fuzzing is a software testing technique that quickly and automatically explores the input space of a program without knowing its internals. Therefore, developers commonly use fuzzing as part of test integration throughout the software development process. Unfortunately, it also means that such a blackbox and the automatic natures of fuzzing are appealing to adversaries who are looking for zero-day vulnerabilities.To solve this problem, we propose a new mitigation approach, called FUZZIFICATION, that helps developers protect the released, binary-only software from attackers who are capable of applying state-of-the-art fuzzing techniques. Given a performance budget, this approach aims to hinder the fuzzing process from adversaries as much as possible. We propose three FUZZIFICATION techniques: 1) SpeedBump, which amplifies the slowdown in normal executions by hundreds of times to the fuzzed execution, 2) BranchTrap, interfering with feedback logic by hiding paths and polluting coverage maps, and 3) AntiHybrid, hindering taint-analysis and symbolic execution. Each technique is designed with best-effort, defensive measures that attempt to hinder adversaries from bypassing FUZZIFICATION.Our evaluation on popular fuzzers and real-world applications shows that FUZZIFICATION effectively reduces the number of discovered paths by 70.3% and decreases the number of identified crashes by 93.0% from real-world binaries, and decreases the number of detected bugs by 67.5% from LAVA-M dataset while under user-specified overheads for common workloads. We discuss the robustness of FUZZIFICATION techniques against adversarial analysis techniques. We opensource our FUZZIFICATION system to foster future research.},
+booktitle = {Proceedings of the 28th USENIX Conference on Security Symposium},
+pages = {1913–1930},
+numpages = {18},
+location = {Santa Clara, CA, USA},
+series = {SEC'19}
+}
+
+@inproceedings{Driller,
+  title={Driller: Augmenting Fuzzing Through Selective Symbolic Execution.},
+  author={Stephens, Nick and Grosen, John and Salls, Christopher and Dutcher, Andrew and Wang, Ruoyu and Corbetta, Jacopo and Shoshitaishvili, Yan and Kruegel, Christopher and Vigna, Giovanni},
+  booktitle={NDSS},
+  volume={16},
+  number={2016},
+  pages={1--16},
+  year={2016}
+}
+
+@inproceedings{DGF,
+author = {B\"{o}hme, Marcel and Pham, Van-Thuan and Nguyen, Manh-Dung and Roychoudhury, Abhik},
+title = {Directed Greybox Fuzzing},
+year = {2017},
+isbn = {9781450349468},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3133956.3134020},
+doi = {10.1145/3133956.3134020},
+abstract = {Existing Greybox Fuzzers (GF) cannot be effectively directed, for instance, towards problematic changes or patches, towards critical system calls or dangerous locations, or towards functions in the stack-trace of a reported vulnerability that we wish to reproduce. In this paper, we introduce Directed Greybox Fuzzing (DGF) which generates inputs with the objective of reaching a given set of target program locations efficiently. We develop and evaluate a simulated annealing-based power schedule that gradually assigns more energy to seeds that are closer to the target locations while reducing energy for seeds that are further away. Experiments with our implementation AFLGo demonstrate that DGF outperforms both directed symbolic-execution-based whitebox fuzzing and undirected greybox fuzzing. We show applications of DGF to patch testing and crash reproduction, and discuss the integration of AFLGo into Google's continuous fuzzing platform OSS-Fuzz. Due to its directedness, AFLGo could find 39 bugs in several well-fuzzed, security-critical projects like LibXML2. 17 CVEs were assigned.},
+booktitle = {Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {2329–2344},
+numpages = {16},
+keywords = {patch testing, coverage-based greybox fuzzing, directed testing, verifying true positives, reachability, crash reproduction},
+location = {Dallas, Texas, USA},
+series = {CCS '17}
+}
+
+@inproceedings{FirmFuzz,
+author = {Srivastava, Prashast and Peng, Hui and Li, Jiahao and Okhravi, Hamed and Shrobe, Howard and Payer, Mathias},
+title = {FirmFuzz: Automated IoT Firmware Introspection and Analysis},
+year = {2019},
+isbn = {9781450368384},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3338507.3358616},
+doi = {10.1145/3338507.3358616},
+abstract = {While the number of IoT devices grows at an exhilarating pace their security remains stagnant. Imposing secure coding standards across all vendors is infeasible. Testing individual devices allows an analyst to evaluate their security post deployment. Any discovered vulnerabilities can then be disclosed to the vendors in order to assist them in securing their products. The search for vulnerabilities should ideally be automated for efficiency and furthermore be device-independent for scalability.We present FirmFuzz, an automated device-independent emulation and dynamic analysis framework for Linux-based firmware images. It employs a greybox-based generational fuzzing approach coupled with static analysis and system introspection to provide targeted and deterministic bug discovery within a firmware image.We evaluate FirmFuzz by emulating and dynamically analyzing 32 images (from 27 unique devices) with a network accessible from the host performing the emulation. During testing, FirmFuzz discovered seven previously undisclosed vulnerabilities across six different devices: two IP cameras and four routers. So far, 4 CVE's have been assigned.},
+booktitle = {Proceedings of the 2nd International ACM Workshop on Security and Privacy for the Internet-of-Things},
+pages = {15–21},
+numpages = {7},
+keywords = {dynamic analysis, iot, firmware testing, fuzzing, vulnerability analysis},
+location = {London, United Kingdom},
+series = {IoT S&amp;P'19}
+}

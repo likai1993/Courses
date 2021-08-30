@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{usenixsilk}
+{\sc Balmau, O., Dinu, F., Zwaenepoel, W., Gupta, K., Chandhiramoorthi, R., and
+  Didona, D.}
+\newblock {SILK}: Preventing latency spikes in log-structured merge key-value
+  stores.
+\newblock In {\em 2019 {USENIX} Annual Technical Conference ({USENIX} {ATC}
+  19)\/} (Renton, WA, July 2019), {USENIX} Association, pp.~753--766.
+
+\bibitem{rocksdb}
+{\sc Facebook}.
+\newblock Rocksdb.
+\newblock \url{https://github.com/facebook/rocksdb}.
+
+\bibitem{leveldb}
+{\sc Google}.
+\newblock Leveldb.
+\newblock \url{https://github.com/google/leveldb}.
+
+\end{thebibliography}

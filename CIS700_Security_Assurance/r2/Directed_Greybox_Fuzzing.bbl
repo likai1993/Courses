@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{DGF}
+Marcel B\"{o}hme, Van-Thuan Pham, Manh-Dung Nguyen, and Abhik Roychoudhury.
+\newblock Directed greybox fuzzing.
+\newblock In {\em Proceedings of the 2017 ACM SIGSAC Conference on Computer and
+  Communications Security}, CCS '17, page 2329–2344, New York, NY, USA, 2017.
+  Association for Computing Machinery.
+
+\end{thebibliography}

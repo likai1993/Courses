@@ -1,0 +1,1 @@
+This is a forked branch of TinyHttpServer implemented by Antonino Calderone. In this branch, Kai Li extends some HTTP 1.1 features and adding some security defense strategies. 

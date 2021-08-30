@@ -1,0 +1,55 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+%\usepackage{amsmath}  % improve math presentation
+%\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+%\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+\usepackage{blindtext}
+%++++++++++++++++++++++++++++++++++++++++
+
+\begin{document}
+
+\begin{center}
+{\Large FirmFuzz: Automated IoT Firmware Introspection and Analysis} 
+
+{Prashast Srivastava, Hui Peng, Jiahao Li, Hamed Okhravi , Howard Shrobe, Mathias Payer}
+\bigskip
+
+{\large Writer: Kai Li}
+\date{\today}
+\end{center}
+
+
+\section{Summary}
+This paper proposed an automated device-independent emulation and dynamic analysis framework called FirmFuzz~\cite{FirmFuzz} for Linux-based firmware images. It employs a greybox-based generational fuzzing approach coupled with static analysis and system introspection to provide targeted and deterministic bug discovery within a firmware image. 
+Three main features of the FirmFuzz fuzzer are: Context-driven input generation, Deterministic vulnerability detection and Fuzzing side-effects elimination.
+\begin{itemize}
+\item Context-driven input generation: emulation framework, automatically reverts the firmware back to a stable state if the firmware reaches an inconsistent state while being fuzzed.
+\item Deterministic vulnerability detection: The vulnerability monitors operating both in the guest (i.e., the emulated firmware) and the host allow deterministic vulnerability detection.
+\item Fuzzing side-effects elimination: FirmFuzz with the help of its emulation framework, automatically reverts the firmware back to a stable state if the firmware reaches an inconsistent state while being fuzzed.
+\end{itemize}
+
+Evaluation results show that FirmFuzz can analyze 32 images (from 27 unique devices) with a network accessible from the host performing the emulation. During testing, FirmFuzz discovered seven previously undisclosed vulnerabilities across six different devices: two IP cameras and four routers and 4 CVE’s have been assigned.
+
+\section{Strengths and Weaknesses}
+\subsection {Strengths}
+1. This paper proposed an automated emulation and dynamic analysis framework for finding deep vulnerabilities in embedded firmware, which sheds lights in a new research direction in firmware fuzzing.\\
+2. The authors developed a generational fuzzer for syntactically legal input generation that leverages static analysis to aid fuzzing of the emulated firmware images while monitoring the firmware runtime.\\
+3. Strong evaluation result shows that FirmFuzz can automatically test firmware images scraped from vendor websites and find seven previously unknown vulnerabilities. 
+
+\subsection {Weakness}
+1. A major limitation of this work is it cannot completely remove all instances of false negative bugs since FirmFuzz relies on template request generation for fuzzing.\\ 
+2. Compared with Firmadyne, FirmFuzz is not applicable at large-scale.\\ 
+3. There could be better (in terms of fairness) testing firmwares to compare FirmFuzz with state-of-the-art works. 
+
+\bibliographystyle{plain}
+\bibliography{readings}  
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+%\usepackage{amsmath}  % improve math presentation
+%\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+%\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+\usepackage{blindtext}
+%++++++++++++++++++++++++++++++++++++++++
+
+\begin{document}
+
+\begin{center}
+{\Large Driller: Augmenting Fuzzing Through Selective Symbolic Execution} 
+
+{Nick Stephens, John Grosen, Christopher Salls, Audrey Dutcher, Ruoyu Wang, Jacopo Corbetta, Yan Shoshitaishvili, Christopher Kruegel, Giovanni Vigna}
+\bigskip
+
+{\large Writer: Kai Li}
+\date{\today}
+\end{center}
+
+
+\section{Summary}
+This paper proposed a augmented fuzzing tool \textbf{Driller}~\cite{Driller} which complements fuzzing technique with concolic execution to enable the fuzzers to pass complex checks in binaries, thus guides the fuzzers to explore deeper and identify vulnerabilities that using traditional fuzzers is hard to discover. Specifically, it targets the binaries that require both \textit{generic inputs} and \textit{specific inputs}(exact match), fuzzing works well to explore \textit{generic input} while concolic execution works well to solve the \textit{specific input}, therefore, combining concolic execution with fuzzing can explore deeper in the program and achieve more code coverage (more crashes) than traditional fuzzing techniques. To solve the path explosion problem when applying concolic execution, it proposes selective concolic execution by exploring based on the input provided by the fuzzer. Driller is implemented based on AFL and angr and evaluated by the DARPA Cyber Grand Challenge, the results show that Driller can find 8.4\% more crashes than the union of baseline techniques (fuzzing alone and symbolic execution alone).  
+
+\section{Strengths and Weaknesses}
+\subsection {Strengths}
+1. An effective technique to improve the fuzzing by leveraging selective concolic execution to reach deeper in the program, and improve the scalability of concolic execution by using fuzzing to solve path explosion.\\
+2. The Driller tool is implemented and can be evaluated on the real-world binaries.\\
+3. Strong evaluation result shows the effectiveness of Driller that it can achieve more code coverages and find more crashes than the baseline techniques, and winning the PARDA CGC. 
+
+\subsection {Weakness}
+1. A major limitation of this tool is the symbolic explorer stub that used to reduce the number of expensive concolic engine invocations, which makes Driller to miss some paths in some cases.\\ 
+2. In a case when user input is treated as generic input in one component and specific input in another, this can make Driller become in-effetive as the fuzzing is disabled.\\ 
+3. Driller scores the same with the first-place in the DARPA challenge while Driller is implemented and tested in a more relaxed circumstance.
+
+\bibliographystyle{plain}
+\bibliography{readings}  
+\end{document}
